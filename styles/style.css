@@ -45,6 +45,12 @@ body{
     background-image: url('../images/cover\ 1.png');
     background-size: cover;
     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.08);
+    animation: rotate 20s linear infinite;
+    animation-play-state: paused;
+}
+
+.disk.play{
+    animation-play-state: running;
 }
 
 .disk::before{
@@ -78,8 +84,8 @@ body{
     -webkit-appearance: none;
     width: 1px;
     height: 20px;
-    background: #8D6E63;
-    box-shadow: -400px 0 0 400px #7e4941 ;
+    background: #3E2723;
+    box-shadow: -400px 0 0 400px #3E2723 ;
 }
 
 .current-time,
@@ -91,3 +97,90 @@ body{
     position: absolute;
     right: 0;
 }
+
+.controls{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.play-btn{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #3E2723;
+    cursor: pointer;
+    border: none;
+}
+
+.play-btn span{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 30px;
+    border-radius: 2px;
+    background: rgba(141, 110, 99, 0.8);
+    transition: .5s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.play-btn span:nth-child(2){
+    left: 58%;
+    transform-origin:center ;
+}
+
+.play-btn.pause span:nth-child(2){
+    transform: translateY(-50%) scaleY(0);
+}
+
+.play-btn.pause span:nth-child(1){
+    width: 35%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+}
+
+.play-btn.pause{
+    animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0;
+    }
+    50%{
+        box-shadow: 0 0 0 5px rgba(141, 110, 99, 0.8);
+    }
+    100%{
+        box-shadow: 0 0 0 5px #3E2723;
+    }
+}
+
+.btn{
+    width: 40px;
+    height: 40px;
+    background:#3E2723;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+

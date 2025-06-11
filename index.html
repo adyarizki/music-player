@@ -8,16 +8,27 @@
 </head>
 <body>
 
-    <div class="music-player">
-        <h1 class="music-name">Song one</h1>
-        <p class="artist-name">artist</p>
+    <audio src="" class="audio-js"></audio>
 
-        <div class="disk"></div>
+    <div class="music-player">
+        <h1 class="music-name music-name-js">Song one</h1>
+        <p class="artist-name artist-name-js">artist</p>
+
+        <div class="disk disk-js"></div>
 
         <div class="song-slider">
-            <input type="range" value="0" class="seek-bar">
-            <span class="current-time">00:00</span>
-            <span class="song-duration">00:00</span>
+            <input type="range" value="0" class="seek-bar seek-bar-js">
+            <span class="current-time current-time-js">00:00</span>
+            <span class="song-duration song-duration-js">00:00</span>
+        </div>
+
+        <div class="controls">
+            <button class="btn backward-btn backward-btn-js"><img src="images/pre.png" alt=""></button>
+            <button class="play-btn-js play-btn pause">
+                <span></span>
+                <span></span>
+            </button>
+            <button class="btn forward-btn forward-btn-js"><img src="images/nxt.png" alt=""></button>
         </div>
     </div>
     
